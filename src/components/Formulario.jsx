@@ -263,7 +263,7 @@ const Formulario = ({ busquedaClima }) => {
   const busquedaLugar = async () => {
     try {
       const response = await fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${lugarSelect.nombreLugar},${lugarSelect.nombrePais}&limit=1&appid=2facc09f4169f9adf2a0d9a08ee34b30`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${lugarSelect.nombreLugar},${lugarSelect.nombrePais}&limit=1&appid=2facc09f4169f9adf2a0d9a08ee34b30`
       );
       const data = await response.json();
       busquedaClima(data[0].lat, data[0].lon)

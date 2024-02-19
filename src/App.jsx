@@ -30,7 +30,9 @@ function App() {
           </Container>
         </>
       ) : (
-        <>No hay resultados</>
+        <Container>
+          No hay resultado
+        </Container>
       )}
     </>
   );

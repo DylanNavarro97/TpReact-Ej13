@@ -3,7 +3,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 const Cards = ({ climaLugar }) => {
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card>
       <Card.Body>
         <Card.Title>{climaLugar?.name}</Card.Title>
         <Card.Title>{Math.round(climaLugar?.main?.temp)}°C</Card.Title>

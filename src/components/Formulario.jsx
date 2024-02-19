@@ -273,9 +273,9 @@ const Formulario = ({ busquedaClima }) => {
   };
 
   return (
-    <Form onSubmit={handleSubmit} className="p-1 mb-2">
+    <Form onSubmit={handleSubmit} className="mb-2 p-2">
       <Row className="mb-2">
-        <div className="col-6">
+        <div className="col-md-6">
           <label htmlFor="nombreLugar">Nombre del lugar</label>
           <FormControl
             placeholder="Ej: Buenos Aires"
@@ -284,7 +284,7 @@ const Formulario = ({ busquedaClima }) => {
             onChange={handleChange}
           ></FormControl>
         </div>
-        <div className="col-6">
+        <div className="col-md-6">
           <label htmlFor="nombrePais">Nombre de país</label>
           <Form.Select
             name="nombrePais"

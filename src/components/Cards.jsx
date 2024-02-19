@@ -1,26 +1,26 @@
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
+import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
 
-const Cards = () => {
+const Cards = ({ climaLugar }) => {
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+    <Card style={{ width: "18rem" }}>
       <Card.Body>
-        <Card.Title>Nombre de lugar</Card.Title>
-        <Card.Title>39 Grados</Card.Title>
-        <Card.Subtitle>Soleado</Card.Subtitle>
+        <Card.Title>{climaLugar?.name}</Card.Title>
+        <Card.Title>{Math.round(climaLugar?.main?.temp)}°C</Card.Title>
+        <Card.Subtitle>{climaLugar?.weather?.main}</Card.Subtitle>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-      </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
-      </Card.Body>
-    </Card>
-  )
-}
+        <ListGroup.Item>
+          Minima: {Math.round(climaLugar?.main?.temp_min)}°C
+        </ListGroup.Item>
+        <ListGroup.Item>
+          Maxima: {Math.round(climaLugar?.main?.temp_max)}°C
+        </ListGroup.Item>
 
-export default Cards
+        <ListGroup.Item>Humedad: {climaLugar?.main?.humidity}%</ListGroup.Item>
+      </ListGroup>
+    </Card>
+  );
+};
+
+export default Cards;

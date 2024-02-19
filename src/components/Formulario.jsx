@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Form, FormControl, Row } from "react-bootstrap";
 
-const Formulario = ({ setearLatyLon }) => {
+const Formulario = ({ busquedaClima }) => {
   const [lugarSelect, setLugarSelect] = useState({
     nombrePais: "",
     nombreLugar: "Andorra",
@@ -266,7 +266,7 @@ const Formulario = ({ setearLatyLon }) => {
         `http://api.openweathermap.org/geo/1.0/direct?q=${lugarSelect.nombreLugar},${lugarSelect.nombrePais}&limit=1&appid=2facc09f4169f9adf2a0d9a08ee34b30`
       );
       const data = await response.json();
-      setearLatyLon(data[0].lat, data[0].lon)
+      busquedaClima(data[0].lat, data[0].lon)
     } catch (error) {
       console.log(error);
     }
